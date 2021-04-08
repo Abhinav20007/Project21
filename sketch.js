@@ -16,13 +16,21 @@ function setup(){
 
     block2 = createSprite(295,580,200,30);
     block2.shapeColor = "orange";
-
+    
     //create two more blocks i.e. block3 and block4 here
+     block3 = createSprite(510,580,200,30);
+     block3.shapeColor = "red"
+      
+     block4 = createSprite(720,580,200,30);
+     block4.shapeColor = "green";
 
+     
+      
     ball = createSprite(random(20,750),100, 40,40);
     ball.shapeColor = rgb(255,255,255);
     //write code to add velocityX and velocityY
-
+      ball.velocityX = 5;
+      ball.velocityY = 5;
 }
 
 function draw() {
@@ -34,7 +42,19 @@ function draw() {
     //write code to bounce off ball from the block1 
     if(block1.isTouching(ball) && ball.bounceOff(block1)){
         ball.shapeColor = "blue";
-        music.play();
+        
+    }
+    if(block2.isTouching(ball) && ball.bounceOff(block2)){
+        ball.shapeColor = "orange";
+        
+    }
+    if(block3.isTouching(ball) && ball.bounceOff(block3)){
+        ball.shapeColor = "red";
+        
+    }
+    if(block4.isTouching(ball) && ball.bounceOff(block4)){
+        ball.shapeColor = "green";
+        
     }
 
 
